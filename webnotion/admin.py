@@ -13,3 +13,4 @@ class NewsletterModelAdmin(admin.ModelAdmin):
 @admin.register(availableservices)
 class availableservices(admin.ModelAdmin):
     list_display = ['id', 'availableservices_title','availableservices_desc','availableservices_url','availableservices_tags','availableservices_subtitile']
+    

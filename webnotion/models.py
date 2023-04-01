@@ -11,6 +11,7 @@ class availableservices(models.Model):
     availableservices_tags = RichTextField(blank=False)
     availableservices_url  = models.URLField(null=True,blank=False, max_length=200)
 
+
 class Newsletter(models.Model):
     email = models.EmailField(max_length=40, blank= False)
 
