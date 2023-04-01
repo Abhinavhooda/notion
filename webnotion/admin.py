@@ -3,7 +3,7 @@ from .models import *
 from modeltranslation.admin import TranslationAdmin
 
 @admin.register(contact_form)
-class contactform(admin.ModelAdmin):
+class contact_form(admin.ModelAdmin):
     list_display = ('name','email','phone','subject','message')
 
 @admin.register(Newsletter)
@@ -13,4 +13,11 @@ class NewsletterModelAdmin(admin.ModelAdmin):
 @admin.register(availableservices)
 class availableservices(admin.ModelAdmin):
     list_display = ['id', 'availableservices_title','availableservices_desc','availableservices_url','availableservices_tags','availableservices_subtitile']
-    
+
+@admin.register(Blog)
+class blog(admin.ModelAdmin):
+    search_fields=[
+        'id',
+        'blog_title',
+    ]
+    list_display=['blog_title','id','blog_img','blog_desc']
