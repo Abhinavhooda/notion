@@ -56,14 +56,12 @@ def contactform(request):
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         subject = request.POST.get('subject')   
-        message = request.POST.get('message')   
-        state = request.POST.get('state')   
-        pincode = request.POST.get('pincode')   
+        message = request.POST.get('message')    
         CF =  contact_form(name=name,email=email,phone=phone,subject=subject,message=message,)
         CF.save()
         messages.success(request,"Successfully Submitted")
         return redirect('contactform')
-    return render(request,"rajapp/contact.html")
+    return render(request,"webnotion/contact.html")
     
 def handler404(request,exception):
     return render(request,'base/error.html')
