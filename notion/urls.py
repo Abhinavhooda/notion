@@ -32,3 +32,4 @@ if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += [
         re_path(r'^rosetta/', include('rosetta.urls'))
     ]
+handler404= 'webnotion.views.handler404'

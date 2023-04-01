@@ -27,7 +27,7 @@ SECRET_KEY = 'hb83_n^cm&t@-d3+q#@@13_yvlr+oxw8oypff78nz62r=01nuv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.notiontrail.in','notiontrail.in']
+ALLOWED_HOSTS = ['www.notiontrail.in','notiontrail.in','127.0.0.1']
 
 
 # Application definition
