@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+  <meta name="description" content="Axtra HTML5 Template">
+
+  <title>{% block title %}{% endblock title %}</title>
+
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/x-icon" href="/static/assets/imgs/logo/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="../../../../external.html?link=https://fonts.googleapis.com/">
+  <link rel="preconnect" href="../../../../external.html?link=https://fonts.gstatic.com/" crossorigin>
+  <link href="../../../../external.html?link=https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <!-- All CSS files -->
+  <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/assets/css/all.min.css">
+  <link rel="stylesheet" href="/static/assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/static/assets/css/progressbar.css">
+  <link rel="stylesheet" href="/static/assets/css/meanmenu.min.css">
+  <link rel="stylesheet" href="/static/assets/css/master.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="dark">
+  <!-- Cursor Animation -->
+  <div class="cursor1"></div>
+  <div class="cursor2"></div>
+
+
+  <!-- Scroll Smoother -->
+  <div class="has-smooth" id="has_smooth"></div>
+
+
+  <!-- Go Top Button -->
+  <button id="scroll_top" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></button>
+
+
+  <!-- Header area start -->
+  <header class="header__area-7">
+    <div class="header__inner-2">
+      <div class="header__logo-2">
+        <a href="index-2.html" class="logo-dark"><img src="/static/assets/imgs/logo/logo-black.png" alt="Site Logo"></a>
+        <a href="index-2.html" class="logo-light"><img src="/static/assets/imgs/logo/site-logo-white-2.png" alt="Site Logo"></a>
+      </div>
+      <div class="header__nav-2">
+        <ul class="main-menu-4 menu-anim">
+          <li><a href="/">home</a>
+          <li><a href={% url 'about' %}>About</a></li>
+          <li><a href={% url 'service' %}>services</a></li>
+          <li><a href={% url 'team' %}>team</a></li>
+          <li><a href={% url 'blog' %}>Blog</a></li>
+          <li><a href={% url 'contact' %}>Contact</a></li>
+        </ul>
+      </div>
+      <div class="header__nav-icon-7">
+        <button class="menu-icon-2" id="open_offcanvas"><img src="/static/assets/imgs/icon/menu-dark.png"
+            alt="Menubar Icon"></button>
+      </div>
+    </div>
+  </header>
+  <!-- Header area end -->
+
+
+  <!-- Offcanvas area start -->
+  <div class="offcanvas__area">
+    <div class="offcanvas__body">
+      <div class="offcanvas__left">
+        <div class="offcanvas__logo">
+          <a href="index-2.html"><img src="/static/assets/imgs/logo/site-logo-white-2.png" alt="Offcanvas Logo"></a>
+        </div>
+        <div class="offcanvas__social">
+          <h3 class="social-title">Follow Us</h3>
+          <ul>
+            <li><a href="#">Dribbble</a></li>
+            <li><a href="#">Behance</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="offcanvas__links">
+          <ul>
+            <li><a href={% url 'about' %}>About</a></li>
+            <li><a href={% url 'contact' %}>contact</a></li>
+            <li><a href={% url 'blog' %}>blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="offcanvas__mid">
+        <div class="offcanvas__menu-wrapper">
+          <nav class="offcanvas__menu">
+            <ul class="menu-anim">
+              <li><a href="/">home</a></li>
+              <li><a href={% url 'about' %}>about</a></li>
+              <li><a href={% url 'service' %}>Service</a></li>
+              <li><a href={% url 'blog' %}>blog</a></li>
+              <li><a href={% url 'contact' %}>contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="offcanvas__right">
+        <div class="offcanvas__search">
+          <form action="#">
+            <input type="text" name="search" placeholder="Search keyword">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <div class="offcanvas__contact">
+          <h3>Get in touch</h3>
+          <ul>
+            <li><a href="tel:+91 8287168854">+(91)-8287168854</a></li>
+            <li><a href="mailto:info@notiontrail.in">info@notiontrail.in</a></li>
+            <li>New Delhi, India</li>
+          </ul>
+        </div>
+        <img src="/static/assets/imgs/shape/11.png" alt="shape" class="shape-1">
+        <img src="/static/assets/imgs/shape/12.png" alt="shape" class="shape-2">
+      </div>
+      <div class="offcanvas__close">
+        <button type="button" id="close_offcanvas"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </div>
+  </div>
+  <!-- Offcanvas area end -->
+  <div id="smooth-wrapper">
+   <div id="smooth-content">
+         {% block body %}
+         {% endblock body %}
+   <!-- Footer area start -->
+      <footer class="footer__area-2 pt-130">
+        <div class="container">
+          <div class="footer__top-2 text-anim">
+            <div class="row">
+              <div class="col-xxl-12">
+                <h2 class="sec-title-3 title-anim">Get started <br> now</h2>
+                <p class="footer__sub-title">If you would like to work with us or
+                  just want to get in touch, we’d love
+                  to hear from you!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__middle-2">
+            <div class="row">
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                <div class="footer__location-2">
+                  <div class="location">
+                    <h3>London</h3>
+                    <p>Baltia Squar, Mark Street, <br>
+                      London</p>
+                  </div>
+                  <div class="location">
+                    <h3>New York</h3>
+                    <p>Nenuya Centre, Elia Street <br>
+                      New York, USA</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                <div class="footer__subscribe-2">
+                  <form action="{% url 'newsletter' %}" method="post">
+                     {% csrf_token %}
+                    <input type="text" name="email" placeholder="Enter your email">
+                    <button type="submit" class="submit"><img src="/static/assets/imgs/icon/arrow-black.png"
+                        alt="Arrow Icon"></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__btm-2">
+            <div class="row">
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5">
+                <div class="footer__copyright-2">
+                  <p>© 2023 | Alrights reserved by <a href="../../../../external.html?link=https://notiontrail.in/" target="_blank">Notiontrail</a>
+                  </p>
+                </div>
+              </div>
+              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-7">
+                <div class="footer__nav">
+                  <ul class="footer-menu menu-anim">
+                    <li><a href={% url 'about' %}>about us</a></li>
+                    <li><a href={% url 'contact' %}>contact</a></li>
+                    <li><a href={% url 'career' %}>Career</a></li>
+                    <li><a href={% url 'faqs' %}>FAQs</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer area end -->
+
+
+    </div>
+  </div>
+
+
+
+  <!-- All JS files -->
+  <script src="/static/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/static/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/js/swiper-bundle.min.js"></script>
+  <script src="/static/assets/js/counter.js"></script>
+  <script src="/static/assets/js/gsap.min.js"></script>
+  <script src="/static/assets/js/ScrollTrigger.min.js"></script>
+  <script src="/static/assets/js/ScrollToPlugin.min.js"></script>
+  <script src="/static/assets/js/ScrollSmoother.min.js"></script>
+  <script src="/static/assets/js/SplitText.min.js"></script>
+  <script src="/static/assets/js/chroma.min.js"></script>
+  <script src="/static/assets/js/mixitup.min.js"></script>
+  <script src="/static/assets/js/vanilla-tilt.js"></script>
+  <script src="/static/assets/js/jquery.meanmenu.min.js"></script>
+  <script src="/static/assets/js/main.js"></script>
+
+
+</body>
+
+
+<!-- Mirrored from wealcoder.com/dev/html/axtra/index-7-dark.html by HTTrack Website Copier/3.x [XR&CO'2017], Thu, 30 Mar 2023 05:16:59 GMT -->
+</html>
