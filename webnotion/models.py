@@ -9,7 +9,7 @@ class availableservices(models.Model):
     availableservices_subtitile = models.CharField(max_length=50, blank=False, null=True)
     availableservices_desc = RichTextField(blank=False)
     availableservices_tags = RichTextField(blank=False)
-    availableservices_url  = models.URLField(null=True,blank=False, max_length=200)
+    availableservices_url  = models.CharField(null=True,blank=False, max_length=200)
 
 
 class Newsletter(models.Model):

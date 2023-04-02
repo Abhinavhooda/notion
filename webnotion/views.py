@@ -6,7 +6,8 @@ from django.utils.translation import gettext as _
 # from django.utils.translation import activate, get_language, gettext
 
 def home(request):
-    return render(request, 'webnotion/index.html', {})
+    services = availableservices.objects.all().order_by('id').reverse()
+    return render(request, 'webnotion/index.html', {'services':services})
 
 def about(request):
     return render(request, 'webnotion/about.html',{})   

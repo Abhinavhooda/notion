@@ -85,80 +85,20 @@
           <div class="row">
             <div class="col-xxl-12">
               <div class="service__items-7 animation_service_7">
+                {% for s in services %}
                 <div class="service__item-7">
-                  <a href="service-details.html">
-                    <h3 class="service__title-7">Branding <span>design</span></h3>
+                  <a href="">
+                    <h3 class="service__title-7">{{s.availableservices_title | safe}} <span>{{s.availableservices_subtitile |safe}}</span></h3>
                   </a>
-                  <p>We help brands stand out through aweful, elegant visual design. Our design mainly philosophy.
+                  <p>{{s.availableservices_desc | safe}}
                   </p>
                   <ul>
-                    <li>+ Logo Design</li>
-                    <li>+ Advertisement</li>
-                    <li>+ Promotion</li>
+                    <li>{{s.availableservices_tags | safe}}</li>
                   </ul>
                 </div>
-                <div class="service__item-7">
-                  <a href="service-details.html">
-                    <h3 class="service__title-7">Interactive <span>Design</span> </h3>
-                  </a>
-                  <p>We help brands stand out through aweful, elegant visual design. Our design mainly philosophy.
-                  </p>
-                  <ul>
-                    <li>+ Logo Design</li>
-                    <li>+ Advertisement</li>
-                    <li>+ Promotion</li>
-                  </ul>
-                </div>
-                <div class="service__item-7">
-                  <a href="service-details.html">
-                    <h3 class="service__title-7">Web & Mobile <span>Development</span> </h3>
-                  </a>
-                  <p>We help brands stand out through aweful, elegant visual design. Our design mainly philosophy.
-                  </p>
-                  <ul>
-                    <li>+ Logo Design</li>
-                    <li>+ Advertisement</li>
-                    <li>+ Promotion</li>
-                  </ul>
-                </div>
-                <div class="service__item-7">
-                  <a href="service-details.html">
-                    <h3 class="service__title-7">Digital <span> Marketing</span> </h3>
-                  </a>
-                  <p>We help brands stand out through aweful, elegant visual design. Our design mainly philosophy.
-                  </p>
-                  <ul>
-                    <li>+ Logo Design</li>
-                    <li>+ Advertisement</li>
-                    <li>+ Promotion</li>
-                  </ul>
-                </div>
-                <div class="service__item-7">
-                  <a href="service-details.html">
-                    <h3 class="service__title-7">Business <span>Strategy</span></h3>
-                  </a>
-                  <p>We help brands stand out through aweful, elegant visual design. Our design mainly philosophy.
-                  </p>
-                  <ul>
-                    <li>+ Logo Design</li>
-                    <li>+ Advertisement</li>
-                    <li>+ Promotion</li>
-                  </ul>
-                </div>
-                <div class="service__item-7">
-                  <a href="service-details.html">
-                    <h3 class="service__title-7">Illustration <span>Modelling</span> </h3>
-                  </a>
-                  <p>We help brands stand out through aweful, elegant visual design. Our design mainly philosophy.
-                  </p>
-                  <ul>
-                    <li>+ Logo Design</li>
-                    <li>+ Advertisement</li>
-                    <li>+ Promotion</li>
-                  </ul>
-                </div>
+                {% endfor %}
               </div>
-            </div>
+             </div>
           </div>
         </div>
       </section>
