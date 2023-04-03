@@ -8,7 +8,7 @@ class availableservices(models.Model):
     availableservices_title = models.CharField(max_length=50, null=True, blank=False)
     availableservices_subtitile = models.CharField(max_length=50, blank=False, null=True)
     availableservices_desc = RichTextField(blank=False)
-    availableservices_desc_add = RichTextField(max_length=1500, blank=True, null= False)
+    availableservices_desc_add = RichTextField(max_length=500, blank=True, null= False)
     availableservices_tags = RichTextField(blank=False)
     availableservices_url  = AutoSlugField(populate_from=availableservices_title, unique=True, default=None,blank=False, null=True)
 
