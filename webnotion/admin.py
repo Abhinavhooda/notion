@@ -21,3 +21,11 @@ class blog(admin.ModelAdmin):
         'blog_title',
     ]
     list_display=['blog_title','id','blog_img','blog_desc']
+
+@admin.register(Team)
+class team(admin.ModelAdmin):
+    search_fields=[
+        'id',
+        'member_name'
+    ]
+    list_display=['member_number','member_name','member_designation']

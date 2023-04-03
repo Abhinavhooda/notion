@@ -6,8 +6,9 @@ from django.utils.translation import gettext as _
 # from django.utils.translation import activate, get_language, gettext
 
 def home(request):
-    services = availableservices.objects.all().order_by('id').reverse()
-    return render(request, 'webnotion/index.html', {'services':services})
+    homeservices = availableservices.objects.all().order_by('id').reverse()
+    hometeam = Team.objects.all().order_by('id')
+    return render(request, 'webnotion/index.html', {'homeservices':homeservices,'hometeam':hometeam})
 
 def about(request):
     return render(request, 'webnotion/about.html',{})   
@@ -36,7 +37,20 @@ def newsletter(request):
         em = Newsletter.objects.create(email=email)
         em.save()
         return redirect('/')
-    
+
+class Services(View):
+    def get(self, request):
+        services =  availableservices.objects.all().order_by('id').reverse()
+        return render(request, 'webnotion/service.html', {'services':services})
+
+class Servicesdetailview(View):
+    def get(self, request, slug):
+        Service = availableservices.objects.get(availableservices_url=slug)
+        service_object = availableservices.objects.get(availableservices_url=slug)
+        service_object.save()
+        return render(request, 'webnotion/service-detail.html', {'Service':Service})
+        
+
 class blogs(View):
     def get(self, request):
         blog = Blog.objects.all().order_by('id').reverse()
@@ -49,8 +63,18 @@ class blogdetailview(View):
         blog_object.save()
         return render(request, 'webnotion/blog-detail.html', {'blog':blog})
         
+class teammembers(View):
+    def get(self, request):
+        team = Team.objects.all().order_by('id').reverse()
+        return render(request, 'webnotion/team.html', {'team':team})
+
+class teamdetailview(View):
+    def get(self, request, slug):
+        team=Team.objects.get(member_slug=slug)
+        team_object = Team.objects.get(member_slug=slug)
+        team_object.save()
+        return render(request, 'webnotion/team-detail.html', {'team':team})
         
-    
 def contactform(request):
     if request.method == "POST":
         name = request.POST.get('name')

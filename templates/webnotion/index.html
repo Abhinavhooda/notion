@@ -85,9 +85,9 @@
           <div class="row">
             <div class="col-xxl-12">
               <div class="service__items-7 animation_service_7">
-                {% for s in services %}
+                {% for s in homeservices %}
                 <div class="service__item-7">
-                  <a href="">
+                  <a href="{% url 'Servicesdetailview' s.availableservices_url %}">
                     <h3 class="service__title-7">{{s.availableservices_title | safe}} <span>{{s.availableservices_subtitile |safe}}</span></h3>
                   </a>
                   <p>{{s.availableservices_desc | safe}}
@@ -220,90 +220,20 @@
           <div class="row">
             <div class="col-xxl-12">
               <div class="team__items-7">
-                <a href="team-details.html">
+                {% for t  in hometeam  %}
+                <a href="{% url 'teamdetailview' t.member_slug %}">
                   <div class="team__item-7 fade_bottom_3">
                     <div class="team__name-wrap-7">
-                      <p class="tm-serial">01</p>
+                      <p class="tm-serial">{{t.member_number}}</p>
 
-                      <h3 class="tm-name">Saymon D. Halk</h3>
+                      <h3 class="tm-name">{{t.member_name}}</h3>
                     </div>
-                    <h4 class="tm-role">Web <br> Developer</h4>
+                    <h4 class="tm-role">{{t.member_designation}}</h4>
                     <div class="tm-link"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div class="team__hover-7" style="background-image: url(/static/assets/imgs/team/1.jpg);"></div>
+                    <div class="team__hover-7" style="background-image: url({{t.member_img.url}});"></div>
                   </div>
                 </a>
-
-                <a href="team-details.html">
-                  <div class="team__item-7 fade_bottom_3">
-                    <div class="team__name-wrap-7">
-                      <p class="tm-serial">02</p>
-
-                      <h3 class="tm-name">Aliya D. Albert</h3>
-                    </div>
-                    <h4 class="tm-role">Founder <br> CEO</h4>
-                    <div class="tm-link"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div class="team__hover-7" style="background-image: url(/static/assets/imgs/team/2.jpg);"></div>
-                  </div>
-                </a>
-
-                <a href="team-details.html">
-                  <div class="team__item-7 fade_bottom_3">
-                    <div class="team__name-wrap-7">
-                      <p class="tm-serial">03</p>
-                      <h3 class="tm-name">Jassica Oliver</h3>
-                    </div>
-                    <h4 class="tm-role">Creative <br> Content Writer </h4>
-                    <div class="tm-link"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div class="team__hover-7" style="background-image: url(/static/assets/imgs/team/3.jpg);"></div>
-                  </div>
-                </a>
-                <a href="team-details.html">
-                  <div class="team__item-7 fade_bottom_3">
-                    <div class="team__name-wrap-7">
-                      <p class="tm-serial">04</p>
-                      <h3 class="tm-name">Daniyel Adamson</h3>
-                    </div>
-                    <h4 class="tm-role">Head of <br> Researcher</h4>
-                    <div class="tm-link"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div class="team__hover-7" style="background-image: url(/static/assets/imgs/team/4.jpg);"></div>
-                  </div>
-                </a>
-                <a href="team-details.html">
-                  <div class="team__item-7 fade_bottom_3">
-                    <div class="team__name-wrap-7">
-                      <p class="tm-serial">05</p>
-                      <h3 class="tm-name">Hardiya Kethrine</h3>
-                    </div>
-                    <h4 class="tm-role">Digital <br> Marketer</h4>
-                    <div class="tm-link"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div class="team__hover-7" style="background-image: url(/static/assets/imgs/team/5.jpg);"></div>
-                  </div>
-                </a>
-                <a href="team-details.html">
-                  <div class="team__item-7 fade_bottom_3">
-                    <div class="team__name-wrap-7">
-                      <p class="tm-serial">06</p>
-                      <h3 class="tm-name">Julian B. Folder</h3>
-                    </div>
-                    <h4 class="tm-role">Creative <br> Designer</h4>
-                    <div class="tm-link"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div class="team__hover-7" style="background-image: url(/static/assets/imgs/team/6.jpg);"></div>
-                  </div>
-                </a>
-                <a href="team-details.html">
-                  <div class="team__item-7 fade_bottom_3">
-                    <div class="team__name-wrap-7">
-                      <p class="tm-serial">07</p>
-                      <h3 class="tm-name">Denial Karlos</h3>
-                    </div>
-                    <h4 class="tm-role">Backend <br> Developer</h4>
-                    <div class="tm-link"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div class="team__hover-7" style="background-image: url(/static/assets/imgs/team/7.jpg);"></div>
-                  </div>
-                </a>
-                <div class="team7__img-wrap">
-                  <div class="team7__img"></div>
-                </div>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -423,7 +353,7 @@
                 <p class="cta__sub-title">Work with us</p>
                 <h2 class="cta__title title-anim">We would love to hear more about your project</h2>
                 <div class="btn_wrapper">
-                  <a href="contact.html" class="wc-btn-primary btn-hover btn-item"><span></span>Let’s talk us <i
+                  <a href="{% url 'contact' %}" class="wc-btn-primary btn-hover btn-item"><span></span>Let’s talk us <i
                       class="fa-solid fa-arrow-right"></i></a>
                 </div>
               </div>

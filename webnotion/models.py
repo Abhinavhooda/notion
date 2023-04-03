@@ -8,8 +8,9 @@ class availableservices(models.Model):
     availableservices_title = models.CharField(max_length=50, null=True, blank=False)
     availableservices_subtitile = models.CharField(max_length=50, blank=False, null=True)
     availableservices_desc = RichTextField(blank=False)
+    availableservices_desc_add = RichTextField(max_length=1500, blank=True, null= False)
     availableservices_tags = RichTextField(blank=False)
-    availableservices_url  = models.CharField(null=True,blank=False, max_length=200)
+    availableservices_url  = AutoSlugField(populate_from=availableservices_title, unique=True, default=None,blank=False, null=True)
 
 
 class Newsletter(models.Model):
@@ -28,3 +29,10 @@ class Blog(models.Model):
     blog_date = models.DateField(auto_now_add=False)
     blog_desc = RichTextField(blank=False)
     blog_slug = AutoSlugField(populate_from='blog_title', unique=True, default=None, blank=False, null=True)
+
+class Team(models.Model):
+    member_number = models.CharField(max_length=3, blank=False, null=True, default=None)
+    member_name = models.CharField(max_length=50, blank=False, null=False)
+    member_img = models.ImageField(upload_to="media", blank=False)
+    member_designation = models.CharField(max_length=50, blank=False, null=True)
+    member_slug = AutoSlugField(populate_from='member_name', unique=True, blank=False, default=None, null=True)

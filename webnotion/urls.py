@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('service/', views.service, name='service'),
+    path('Servicesdetailview/<slug>', views.Servicesdetailview.as_view(), name='Servicesdetailview'),
     path('team/', views.team, name='team'),
     path('blog/', views.blog, name='blog'),
     path('contact/', views.contact, name='contact'),
@@ -15,7 +16,8 @@ urlpatterns = [
     path('career/', views.career, name='career'),
     path('faqs/', views.faqs, name='faqs'),
     path('newsletter/', views.newsletter, name='newsletter'),
-
+    path('teammembers/', views.teammembers.as_view(), name='teammembers'),
+    path('teamdetailview/<slug>', views.teamdetailview.as_view(), name='teamdetailview')
 
 
 
