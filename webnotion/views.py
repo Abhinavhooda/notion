@@ -4,6 +4,9 @@ from .models import *
 from django.contrib import messages
 from django.utils.translation import gettext as _
 # from django.utils.translation import activate, get_language, gettext
+from django.views.decorators.cache import cache_control
+from datetime import datetime, timedelta
+@cache_control(max_age=86400, expires=datetime.utcnow() + timedelta(days=365))
 
 def home(request):
     homeservices = availableservices.objects.all().order_by('id').reverse()
